@@ -1,7 +1,7 @@
 const Objeto = require('./frase')
 
 module.exports.get = async function (req, res) {
-    let resultado = await Objeto.findOne();
+    let resultado = await Objeto.aggregate([{ $sample: { size: 1 } }]);
     res.json(resultado)
 }
 
