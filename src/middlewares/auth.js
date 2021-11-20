@@ -1,3 +1,3 @@
 require("dotenv").config();
-
-  module.exports = process.env.REQUIRE_KEY;
+const key = process.env.REQUIRE_KEY;
+  module.exports = key;

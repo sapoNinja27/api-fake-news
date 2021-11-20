@@ -4,7 +4,7 @@ require('express-async-errors')
 require('./src/database')
 const express = require('express')
 const app = express()
-const PORT = process.env.PORT || 8080
+const PORT = process.env.PORT || 8000
 const routes = require('./src/route')
 const cors = require('cors')
 const errorHandler = require('./src/middlewares/errorHandler')
