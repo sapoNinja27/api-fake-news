@@ -1,0 +1,10 @@
+const express = require('express')
+const router = express.Router()
+const palavra = require('./palavra-controller')
+const auth = require('../middlewares/authHandler')
+router.get('/find', palavra.get)
+router.post('/save', palavra.save)
+router.put('/update/:id',auth, palavra.update)
+router.delete('/delete/:id',auth, palavra.delete)
+router.get('/findAll', palavra.getAll)
+module.exports = router

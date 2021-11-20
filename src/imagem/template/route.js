@@ -1,0 +1,10 @@
+const express = require('express')
+const router = express.Router()
+const imagem = require('./imagem-controller')
+const auth = require('../../middlewares/authHandler')
+router.get('/find', imagem.get)
+router.post('/save', imagem.save)
+router.put('/update/:id',auth, imagem.update)
+router.delete('/delete/:id',auth, imagem.delete)
+router.get('/findAll', imagem.getAll)
+module.exports = router
