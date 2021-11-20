@@ -5,5 +5,5 @@ let schema = new mongoose.Schema({
     descricao: String,
     avaliada: Boolean
 })
-const Imagem = mongoose.model('Template', schema)
-module.exports = Imagem
+const Template = mongoose.model('Template', schema)
+module.exports = Template
