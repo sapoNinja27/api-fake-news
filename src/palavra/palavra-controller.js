@@ -2,7 +2,7 @@ const Objeto = require('./palavra')
 
 module.exports.get = async function (req, res) {
     const quantity = req.params.quantity;
-    let resultado = await Objeto.aggregate([{ $sample: { size:  parseInt(quantity) } }]);
+    let resultado = await Objeto.aggregate([{ $match: { avaliada: true } }, { $sample: { size: parseInt(quantity) } }]);
     res.json(resultado)
 }
 
