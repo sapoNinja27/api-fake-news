@@ -1,8 +1,24 @@
 const Objeto = require('./imagem')
 
 module.exports.get = async function (req, res) {
-    let resultado = await Objeto.findOne();
-    res.json(resultado)
+    const descricao = req.params.descricao;
+    let resultado = await Objeto.find(
+        {
+            descricao: {
+                $in: [descricao]
+            },
+            avaliada: {
+                $in: [true]
+            }
+        });
+    res.json(shuffleArray(resultado).slice(0,2))
+}
+function shuffleArray(arr) {
+    for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
 }
 
 module.exports.update = async function (req, res) {
