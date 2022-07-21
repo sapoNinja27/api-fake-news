@@ -1,6 +1,14 @@
+Api para alimentar o bot de fake news
+
 Link Github
+
+
 https://github.com/sapoNinja27/api-fake-news
+
+
 Link Heroku
+
+
 https://api-fake-news.herokuapp.com/api/
 
 ROTAS
